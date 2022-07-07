@@ -1,0 +1,84 @@
+@keyframes moveGreen{
+    0% {transform: translate(0);}
+    40% {transform: translateY(calc(100vh - 120px));} 
+    60% {transform: translateY(calc(100vh - 120px));} /*1s delay*/
+    100% {transform: translate(calc(100vw - 120px),calc(100vh - 120px));}
+}
+@keyframes moveGreenBack{
+    0% {transform: translate(calc(100vw - 120px),calc(100vh - 120px));}
+    40% {transform: translateY(calc(100vh - 120px));} 
+    60% {transform: translateY(calc(100vh - 120px));} /*1s delay*/
+    100% {transform: translate(0);}
+}
+
+@keyframes moveRed {
+    20% {transform: translateY(calc(100vh - 120px));}
+    40% {transform: translate(calc((-1)*(calc(50vw - 55px))), calc(100vh - 120px));}
+    60% {transform: translate(calc((100vw - 120px)/2), calc(100vh - 120px));}
+    80% {transform: translate(0, calc(100vh - 120px));}
+    100% {transform: translate(0);}
+}
+
+@keyframes moveBlue {
+    40% {transform: translateY(calc(100vh - 120px));}
+    60% {transform: translate(calc((-1)*(100vw - 120px)), calc(100vh - 120px));}
+    100% {transform: translate(0);}
+}
+
+.circle-green {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    position: absolute;
+    margin: 10px;
+
+    background-color: green;
+    top:0;
+    left:0;
+}
+
+.circle-green-move {
+    animation: moveGreen 5s ease;
+    animation-fill-mode: forwards;
+}
+
+.circle-green-move-back {
+    animation: moveGreenBack 5s ease;
+    animation-fill-mode: forwards;
+}
+
+
+.circle-red {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    position: absolute;
+    margin: 10px;
+
+    background-color: red;
+    top:0;
+    left: calc(50vw - 55px); /*centered relative to ts dimension*/
+}
+
+.circle-red:focus {
+    animation: moveRed 5s ease;
+}
+
+.circle-blue {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    position: absolute;
+    margin: 10px;
+
+    background-color: blue;
+    top: 0;
+    right:0;
+}
+
+.circle-blue:focus {
+    animation: moveBlue 5s ease;
+}
